@@ -1,3 +1,6 @@
+from django.db import models
+from django.contrib.auth import get_user_model
+from blogicum.models import BaseBlogModel
 """Модуль моделей прложения Blog."""
 
 """Включает в себя модели:
@@ -6,12 +9,6 @@
 Публикация(Pocn)
 Автор(User)
 """
-
-
-from django.db import models
-from django.contrib.auth import get_user_model
-from blogicum.models import BaseBlogModel
-
 
 User = get_user_model()  # Модель пользователя
 

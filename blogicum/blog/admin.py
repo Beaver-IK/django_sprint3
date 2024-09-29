@@ -1,4 +1,5 @@
-
+from django.contrib import admin
+from .models import Post, Category, Location
 """Модулья администрирования приложения Blog."""
 
 """Включает в себя модели админитрирования:
@@ -6,10 +7,6 @@
 Категорий(CategoryAdmin)
 Местоположений(LocationAdmin)
 """
-
-
-from django.contrib import admin
-from .models import Post, Category, Location
 
 admin.site.empty_value_display = 'Не задано'
 

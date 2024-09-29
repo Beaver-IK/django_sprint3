@@ -1,12 +1,10 @@
+from django.db import models
 """Модуль абстрактных моделей для приложений Blogicum."""
 
 """Включает в себя абстрактные модели для приложений:
 Блог(blog)
 ...
 """
-
-
-from django.db import models
 
 
 class BaseBlogModel(models.Model):
