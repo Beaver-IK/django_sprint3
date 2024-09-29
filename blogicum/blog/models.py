@@ -17,6 +17,8 @@ User = get_user_model()  # Модель пользователя
 
 
 class Category(BaseBlogModel):
+    """Модель категорий"""
+
     title = models.CharField(
         max_length=256,
         verbose_name='Заголовок',
@@ -41,6 +43,8 @@ class Category(BaseBlogModel):
 
 
 class Location(BaseBlogModel):
+    """Модель местоположений"""
+
     name = models.CharField(
         max_length=256,
         verbose_name='Название места',
@@ -56,6 +60,7 @@ class Location(BaseBlogModel):
 
 
 class Post(BaseBlogModel):
+    """модель публикаций"""
 
     title = models.CharField(
         max_length=256,
