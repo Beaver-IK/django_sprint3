@@ -1,14 +1,17 @@
-from django.db import models
-from django.contrib.auth import get_user_model
-from blogicum.models import BaseBlogModel
-"""Модуль моделей прложения Blog."""
+"""Модуль моделей прложения Blog.
 
-"""Включает в себя модели:
+Включает в себя модели:
 Категория(Category)
 Местоположение(Location)
 Публикация(Pocn)
 Автор(User)
 """
+from django.db import models
+from django.contrib.auth import get_user_model
+from blogicum.models import BaseBlogModel
+#Константа длины выводимого заголовка
+LEN_TITLE = 50
+
 
 User = get_user_model()  # Модель пользователя
 
@@ -88,6 +91,7 @@ class Post(BaseBlogModel):
         null=True,
         on_delete=models.SET_NULL,
         verbose_name='Категория',
+        
     )
 
     class Meta:
@@ -97,4 +101,6 @@ class Post(BaseBlogModel):
         ordering = ('-pub_date',)
 
     def __str__(self) -> str:
+        if len(self.title) > LEN_TITLE:
+            return self.title[:LEN_TITLE] + '...'
         return self.title

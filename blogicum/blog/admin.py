@@ -1,12 +1,13 @@
-from django.contrib import admin
-from .models import Post, Category, Location
-"""Модулья администрирования приложения Blog."""
+"""Модуль администрирования приложения Blog.
 
-"""Включает в себя модели админитрирования:
+Включает в себя модели админитрирования:
 Публикаций(PostAdmin)
 Категорий(CategoryAdmin)
 Местоположений(LocationAdmin)
 """
+from django.contrib import admin
+from .models import Post, Category, Location
+
 
 admin.site.empty_value_display = 'Не задано'
 
