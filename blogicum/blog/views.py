@@ -53,10 +53,6 @@ def category_posts(request: HttpRequest, category_slug: str) -> HttpResponse:
         Category.objects.filter(
             slug=category_slug,
             is_published=True))
-#    post_list = category.posts.all()
-#    context: dict[str, Union[Model, QuerySet[Post]]] = {
-#        'category': category,
-#        'post_list': post_list}"""
     connect: tuple = ('category', 'location', 'author',)
     post_list: QuerySet[Post] = filter_with_q(
         Post,
@@ -68,5 +64,5 @@ def category_posts(request: HttpRequest, category_slug: str) -> HttpResponse:
     context: dict[str, Union[Model, QuerySet[Post]]] = {
         'category': category,
         'post_list': post_list}
-    
+
     return render(request, template, context)

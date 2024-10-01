@@ -9,7 +9,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from blogicum.models import BaseBlogModel
-#Константа длины выводимого заголовка
+# Константа длины выводимого заголовка
 LEN_TITLE = 50
 
 
@@ -91,7 +91,6 @@ class Post(BaseBlogModel):
         null=True,
         on_delete=models.SET_NULL,
         verbose_name='Категория',
-        
     )
 
     class Meta:
