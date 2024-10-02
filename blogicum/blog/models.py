@@ -77,7 +77,6 @@ class Post(BaseBlogModel):
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='posts',
         verbose_name='Автор публикации'
     )
     location = models.ForeignKey(
@@ -91,10 +90,10 @@ class Post(BaseBlogModel):
         null=True,
         on_delete=models.SET_NULL,
         verbose_name='Категория',
+        related_name='posts'
     )
 
     class Meta:
-        default_related_name = 'posts'
         verbose_name = 'публикация'
         verbose_name_plural = 'Публикации'
         ordering = ('-pub_date',)
